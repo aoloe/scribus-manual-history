@@ -1,2 +1,3 @@
-# scribus-manual-history
-Historic material about Scribus
+# Historic material about Scribus
+
+Licence: cc-by-sa
