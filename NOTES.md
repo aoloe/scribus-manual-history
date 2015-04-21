@@ -20,7 +20,7 @@ Topic started by antonio_mo on <http://scribus-users.de>: <http://www.scribus-us
   - Measurement palette
   - Text tool and image tool
   - Magnetic guides
-  - output
+  - PS output
   - Distribtue/align dialog
   - Rulers
   - Grids
