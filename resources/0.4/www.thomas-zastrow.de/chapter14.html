@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<h3>1.4 Fragen und Antworten zur Installation</h3>
+<br><br>
+<b>1.4.1 Scribus startet nicht: Es werden keine Fonts gefunden</b><br><br>
+Antworten von Christian Töpp:
+<ul>
+<li>Stellen Sie sicher, dass /usr/X11/lib/X11/fonts/Type1 oder ein ähnlicher Pfad existiert</li>
+<li>Wenn dieser Pfad existiert aber nicht in der Ausgabe des Programms "xset -q" im Bereich
+Type 1 Fonts auftaucht, ergänzen Sie Ihre XF86Config um diesen Pfad</li>
+<li>Stellen Sie sicher, dass die XF86Config in der Sektion Modules einen Eintrag "Load Type1" enthält</li>
+<li>Starten Sie X neu</li>
+<li>Überprüfen Sie erneut, ob "xset -q" nun die Pfadangabe zu Ihren Type1-Fonts enthält <li>
+</ul>
+
+<hr>
+<div align="center"><a href="chapter13.html">[Vorangegangenes Kapitel]</a>  <a href="index.html">[Index]</a>  <a href="chapter21.html">[Nächstes Kapitel]</a></div>
+
+</body>
+</html>

@@ -7,6 +7,7 @@ Topic started by antonio_mo on <http://scribus-users.de>: <http://www.scribus-us
 
 - 0.4 27.8.2001 / 8.9.2001
   - Redesign the distribtue/align dialog
+- 0.5 23.11.2001
 - 0.6 13.4.2002
 - 0.8 29.9.2002
   - Based on QT 3
