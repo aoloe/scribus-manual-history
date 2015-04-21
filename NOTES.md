@@ -2,6 +2,161 @@
 
 Topic started by antonio_mo on <http://scribus-users.de>: <http://www.scribus-user.de/forum/viewtopic.php?f=17&t=108>
 
+
+## Stable versions
+
+- 0.4 27.8.2001 / 8.9.2001
+  - Redesign the distribtue/align dialog
+- 0.6 13.4.2002
+- 0.8 29.9.2002
+  - Based on QT 3
+- 1.0 26.6.2003
+- 1.2.0   28.8.2004
+
+## Unstable versions
+
+- 10.6.2001
+  - First entry in the Changelog file
+  - Measurement palette
+  - Text tool and image tool
+  - Magnetic guides
+  - output
+  - Distribtue/align dialog
+  - Rulers
+  - Grids
+  - Clipping path for image and text frames
+  - Nodes palette
+- 0.3.2  16.6.2001
+  - insert page dialog
+  - delete page dialog
+  - First bits of the Properties Palette ("Modify objects" dialog)
+- 0.3.3 24.6.2001
+  - Manual kerning
+  - Flip text boxes
+  - Text superscript and subscript
+  - Preferences for the text tool
+- 0.3.4 30.6.2001
+  - Italic button
+  - Loading colors from other documents
+  - Transparency for EPS images
+  - Text underline and strikethrough
+- 0.3.5 7.7.2001
+  - Bold and Small caps buttons
+  - Help browser
+  - Image frames in the Properties Palette
+- 0.3.6
+  - Export to XML
+- 0.3.7 21.7.2001
+  - New XML based file format
+  - Linked text frames
+- 0.3.8 28.7.2001
+  - Moving text frames with arrow keys
+- 0.3 9. Juli 2001    Entwicklung Erstes veröffentlichtes Entwicklungsrelease.
+  - Clipping on page boundaries for PS output
+  - Starting support for other encoding than Latin 1
+  - Measurement units choice (pt, mm)
+  - Drag and drop of pictures to Scribus
+- 0.3.10 12.8.2001
+  - Improvements to drag and drop behavior
+  - PDF annotations
+  - Print transparencies
+- 0.3.11 19.8.2001
+  - Automatic linebreak on word boundaries
+  - Redesign the dialogs so that the text fits in all languages
+- 0.4.2 22.9.2001
+  - New color representation for CMYK colors
+  - Color separation in the print dialog
+  - Text alignement (left, right, center)
+- 0.4.3 1.10.2001
+  - Background color for pages (display only)
+- 0.4.4 6.10.2001
+  - Justification of text (full and forced)
+- 0.4.5 14.10.2001
+  - TTF fonts support
+- 0.4.6 14.10.2001
+  - Scrapbook
+- 0.4.7 29.10.2001
+  - Selection tool
+  - First keyboard shortcuts
+- 0.4.8 5.11.2001
+  - Master pages (Templates)
+  - Facing pages
+- 0.4.9 12.11.2001
+  - Item groups
+- 0.4.10 21.11.2001
+  - smart hyphens
+  - pictures manager
+- 0.5 23.11.2001
+  - Zoom tool
+  - RGB colors for the color chooser
+-  0.5.6 1.3.2002
+  - Preview in image loader
+  - Plugins infrastructure
+  - Experimental color management
+  - TIFF images
+  - PDF export
+  - PDF bookmarks, PDf presentation effects and PDf articles support
+  - Use defined keyboard shortcuts
+- 0.5.7 21.3.2002
+  - Round edges for frames
+  - Master pages are now a background layer
+- 0.7 27.4.2002
+  - Qt3
+  - Print through an external command
+- 0.7.1 28.4.2002
+- 0.7.2 12.5.2002
+  - Allow lines thinner than 1 pt
+  - Polygons tool
+- 0.7.3 26.5.2002
+  - Convert between items (text frame to image frame...)
+  - eight handles for the object
+  - Bezier courves (merged polylines in it)
+  - Attach text to path
+- 0.7.4 7.6.2002
+  - Use Bezier courbes for clipping paths
+  - Layers
+- 0.7.5 25.6.2002
+  - Interactive PDF elements and PDF forms
+- 0.7.6 14.7.2002
+  - Page ranges for PDF export
+- 0.7.7 30.7.2002
+  - Gammut check
+  - First undo code
+- 0.7.8 8.9.2002
+  - Page palette
+  - Scaling frame in edit mode
+
+
 Scribus versionen [aus Wikipedia](http://de.wikipedia.org/wiki/Scribus#Versionsgeschichte)
 
-- 
+- 1.2.1   1. August 2005  stabil  Seit Version 1.2.1 wird für Europa und Nordamerika kommerzieller Support angeboten.
+- 1.3.0   15. Juli 2005   Entwicklung Erste Version, die auf Windows und Mac OS X läuft.
+- 1.3.3.5 10. November 2006   stabil  Erstes stabiles Release in der 1.3.x.x Serie.
+- 1.3.3.7 9. Januar 2007  stabil  Erste Version, die auf OS/2 läuft.
+- 1.3.3.8 15. März 2007   stabil  
+- 1.3.4   30. Mai 2007    Entwicklung Die Entwicklung der Version 1.3.4 wurde zugunsten der Qt-4-basierten Version 1.3.5 eingestellt, die jedoch nie als stabile Version veröffentlicht wurde.
+- 1.3.3.10    8. Januar 2008  stabil  
+- 1.3.3.11    11. Januar 2008 stabil  
+- 1.3.3.12    23. Juni 2008   stabil  
+- 1.3.3.13    15. April 2009  stabil  
+- 1.3.5   20. April 2009  Entwicklung 
+- 1.3.5 RC2   4. Juni 2009    Entwicklung 
+- 1.3.5 RC3   6. Juli 2009    Entwicklung 
+- 1.3.5.1 8. November 2009    Entwicklung 
+- 1.3.3.14    28. Januar 2010 stabil  Letztes stabiles Release in der 1.3.3.x Serie.
+- 1.3.6   22. März 2010   Entwicklung 
+- 1.3.7   5. Juni 2010    Entwicklung 
+- 1.3.8   23. Juli 2010   Entwicklung 
+- 1.3.9   30. November 2010   Entwicklung 
+- 1.4.0 RC1   18. Februar 2011    Entwicklung 
+- 1.4.0 RC2   8. März 2011    Entwicklung 
+- 1.4.0 RC3   27. März 2011   Entwicklung 
+- 1.4.0 RC4   30. Mai 2011    Entwicklung 
+- 1.4.0 RC6   19. Oktober 2011    Entwicklung 
+- 1.4.0   1. Januar 2012  stabil  Die Reihe 1.4.x ist der Nachfolger der stabilen Versionsreihe 1.3.3.x, von der die Version 1.3.3.14 die letzte Aktualisierung war.
+- 1.4.1   30. April 2012  stabil  
+- 1.4.2   14. Januar 2013 stabil  hunspell integriert
+- 1.4.3   31. Juli 2013   stabil  Portierung auf Haiku, Unterstützung von QR-Codes
+- 1.4.4   29. Mai 2014    stabil  
+- 1.4.5   30. Januar 2015 stabil  
+- 1.5svn      Entwicklung Experimenteller Zweig, in dem neue Funktionen getestet werden. Einige werden nach und nach in den 1.4er-Zweig übernommen.
