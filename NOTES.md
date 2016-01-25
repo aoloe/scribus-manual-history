@@ -161,3 +161,7 @@ Scribus versionen [aus Wikipedia](http://de.wikipedia.org/wiki/Scribus#Versionsg
 - 1.4.4   29. Mai 2014    stabil  
 - 1.4.5   30. Januar 2015 stabil  
 - 1.5svn      Entwicklung Experimenteller Zweig, in dem neue Funktionen getestet werden. Einige werden nach und nach in den 1.4er-Zweig übernommen.
+
+## Background
+
+- [Seitenmacher, DTP mit Scribus](http://www.linux-community.de/Internal/Artikel/Print-Artikel/LinuxUser/2002/05/DTP-mit-Scribus), linux community, 2002
