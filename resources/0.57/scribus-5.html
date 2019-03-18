@@ -1,0 +1,863 @@
+<html>
+<head>
+<title>LinuxUser - Das Magazin für die Praxis -     LU 05/2002 - Scribus</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel=stylesheet type="text/css" href="/style.css">
+    <meta name="Publisher" content="Computec Media GmbH">
+    <meta name="Copyright" content="Computec Media GmbH">
+    <meta name="Keywords" content="LinuxUser,Linux,Anwender,Magazin,Praxis,Wissen,Privatanwender,praxisorientiert,Artikel">
+    <meta name="Description" content="LinuxUser bietet jeden Monat auf 100 Seiten praxisorientierte Artikel, Workshops und News rund um Linux.">
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+  <div align="right" style="margin-bottom:5px;">
+          <small>Erschienen in LinuxUser <a href="https://www.linux-user.de/ausgabe/2002/05">05/2002</a>
+          <a href="http://shop.linuxnewmedia.de/store/eh01/EH10025/de">Ausgabe bestellen</a>
+            </small>
+      </div>
+
+
+ 
+ <TABLE WIDTH="100%">
+ <TR>
+ 
+ <TD>
+ <H4>DTP mit Scribus</H4>
+ <H1>Seitenmacher</H1>
+ von Frank Wieduwilt
+ </TD>
+ <TD>
+ <IMG SRC="aufmacher.jpg" ALT=" [ Titelbild ] " ALIGN=right>
+ </TD>
+ </TR>
+ </TABLE>
+ 
+ <P>
+ <HR NOSHADE>
+ <FONT COLOR="#0000ff">
+ <I>
+ Desktop Publishing unter Linux? Scribus schickt sich an, eine Lösung für die Erstellung von
+ Drucksachen auf der Pinguin-Plattform zu werden.
+ </I>
+ </FONT>
+ <HR NOSHADE>
+ </P>
+ <p>
+ Bis vor Kurzem schien es, als sollte es kein Programm zur Herstellung hochwertiger
+ Drucksachen für Linux geben. Adobe stellte vor einiger Zeit die Entwicklung von
+ FrameMaker für
+ das Pinguin-Betriebssystem ein, und auch von anderen Firmen war kein Interesse an einem <B>DTP</B>-Programm
+ für diese Plattform zu erkennen. Seit etwa einem Jahr aber existiert Scribus, das seitdem
+ in schnellen Schritten zu einem für einfache Layout-Aufgaben geeigneten Programm
+ wurde: Die
+ wichtigsten Funktionen zur Dokumentgestaltung stehen schon zur Verfügung, und
+ das Programm läuft für nicht-professionelle Zwecke bereits ausreichend stabil.
+ </p>
+ <p>
+ Dem Artikel liegt die <b>Entwicklerversion</b> 0.5.7
+ zugrunde; wer Wert auf größere Stabilität legt, sollte Version 0.5.0 verwenden, die
+ allerdings nicht alle im Folgenden erwähnten Funktionen besitzt. Zum Erscheinen
+ dieses Hefts wird voraussichtlich die nächste stabile Version 0.6 fertig sein.
+ </p>
+ 
+ <P>
+ <hr>
+ <gl>
+ <b>DTP:</b> "Desktop Publishing", etwa "Publizieren vom Schreibtisch aus", meint
+ das Herstellen von Druckvorlagen mit dem PC (siehe Kasten 1). Unter [2] finden Sie
+ eine Einführung in DTP.
+ </gl><br>
+ <gl>
+ <b>Entwicklerversion</b>: Von Linux-Programmen gibt es häufig zwei Programmversionen:
+ Eine "stable", also stabile Version für die Endbenutzerin und eine Entwicklerversion,
+ in der neue, noch nicht endgültig ausgetestete Funktionalität integriert ist.
+ </gl>
+ <hr>
+ </P>
+ 
+ <h3>Installation</h3>
+ <p>
+ Scribus ist auf der Programm-Homepage [1] als Quelltext erhältlich. Kopieren
+ Sie sich von
+ dort oder von unserer Heft-CD die Datei <i>scribus-0.5.7.tar.gz</i> herunter,
+ und entpacken Sie sie mit dem Befehl <i>tar -xzvf scribus-0.5.7.tar.gz</i> oder
+ einem Programm wie <i>ark</i>. Zum Übersetzen benötigen
+ Sie zudem Qt (selbstkompiliert oder inklusive des <I>dev(el)</I>-Pakets)
+ in einer Version ab 2.2, jedoch nicht Qt 3.x. Haben Sie mehrere Qt-Versionen
+ installiert, denken Sie bitte daran, die Variable <I>QTDIR</I> auf das
+ richtige Qt-Verzeichnis zeigen zu lassen, üblicherweise mit
+ <pre>
+ export QTDIR=/usr/lib/qt2
+ </pre>
+ <p>
+ Wechseln Sie ins neu entstandene Verzeichnis <i>scribus-0.5.7</i>, und
+ geben Sie in einer Konsole die Befehle <i>./configure</i> und <i>make</i> ein, um das
+ Programm zu übersetzen. Zur Installation werden Sie mit <i>su</i>
+ zu <i>root</i> und rufen anschließend <i>make install</i> auf. Von nun an starten Sie Scribus
+ durch den Befehl <i>scribus &amp;</i> in einer Konsole.
+ </p>
+ 
+ <P>
+ <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 WIDTH="100%">
+ <TR ALIGN=CENTER BGCOLOR="#dddddd">
+ <TD ALIGN=CENTER>
+ <FONT SIZE=+2>Kasten 1: DTP</FONT>
+ </TD>
+ </TR>
+ <TR ALIGN=LEFT VALIGN=TOP>
+ <TD>
+ <BR>
+ <p>
+ Unter <I>Desktop Publishing</I> versteht man das Herstellen von Publikationen
+ am Schreibtisch. Anstatt das Dokument von verschiedenen
+ Personen schreiben, gestalten und setzen zu lassen,
+ kann ein Grafiker mit Hilfe eines DTP-Programms Texte und Grafiken in hoher
+ Qualität zu einem Dokument zusammen setzen und für
+ den Druck vorbereiten.
+ </p>
+ <p>
+ DTP-Programme erlauben das punktgenaue, typografisch korrekte Setzen von
+ Schrift und die präzise Integration von Grafiken -- Fähigkeiten,
+ die normale Textverarbeitungsprogramme in der Regel nicht haben.
+ </p>
+ <p>
+ Wichtiger Bestandteil von DTP ist das WYSIWYG-Prinzip ("<I>W</I>hat <I>Y</I>ou
+ <I>S</I>ee <I>I</I>s <I>W</I>hat <I>Y</I>ou <I>G</I>et"), bei dem die Bildschirmdarstellung so weit
+ wie möglich mit der Druckausgabe übereinstimmt. So sieht der Designer
+ das Produkt am Bildschirm fast genauso, wie es später auf Papier
+ aussieht.
+ </p>
+ <p>
+ Die Ausgabe von DTP-Dokumenten erfolgt auf verschiedenen Geräten,
+ vom Laserdrucker bis zum Satzbelichter. In letzter Zeit ist
+ <b>PDF</b> als universelles Format zur Produktion von Publikationen
+ hinzugekommen. Dokumente im PDF-Format können sowohl am Bildschirm
+ betrachtet als auch in hoher Qualität ausgedruckt werden.
+ </p>
+ <p>
+ DTP ermöglicht die kostengünstige Herstellung von Druckvorlagen
+ von allen möglichen Dokumenten, angefangen von Speisekarten und
+ Handzetteln bis hin zu Zeitschriften.
+ </p>
+ </TD>
+ </TR>
+ </TABLE>
+ </p>
+ 
+ <p>
+ <hr>
+ <gl>
+ <b>PDF</b>: "Portable Document Format", ein von der Firma Adobe entwickeltes Dateiformat
+ zum betriebssystemübergreifenden Austausch formatierten Textes.
+ </gl>
+ <hr>
+ </P>
+ 
+ 
+ <P>
+ <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 WIDTH="100%">
+ <TR ALIGN=CENTER BGCOLOR="#dddddd">
+ <TD ALIGN=CENTER>
+ <FONT SIZE=+2>Kurzinterview: Franz Schmid</FONT>
+ </TD>
+ </TR>
+ 
+ <TR ALIGN=LEFT VALIGN=TOP>
+ <TD>
+ <p>
+ Franz Schmid, der Autor von Scribus, arbeitet als kaufmännischer Angestellter in einem
+ Natursteinwerk in Eichstätt.</p>
+ <p>
+ <b>LU:</b> Was war Deine Motivation, ein DTP-Programm für Linux zu entwickeln?
+ </p>
+ <p>
+ <b>FS:</b> 
+ Mit Computern aller Art beschäftige ich mich seit ca. 19--20 Jahren, zuerst 
+ mit diversen
+ Homecomputern, dann Macintosh und jetzt Linux. Da ich auf dem Mac sehr gerne
+ mit den diversen DTP-Programmen gearbeitet hatte, vermisste ich diese unter
+ Linux doch sehr. Am nächsten dran ist 
+        StarOffice. Aber das läuft nicht auf allen Plattformen und ist meiner
+        Meinung nach auch zu fett, wenn man mal nur kurz was machen will.
+        Und die Alternative KWord war vor einem Jahr, als ich mit Scribus
+        anfing, schlicht unbenutzbar. Also dachte ich mir, probier doch mal, ob man da nicht selber
+ was auf die Beine stellen könnte.
+ "Schuld" ist also auch schlicht und einfach der Spaß am Programmieren.
+ </p>
+ <p>
+ <b>LU:</b> Welche Zielgruppe hast Du für Scribus im Auge?
+ </p>
+ <p>
+ <b>FS:</b> Sie reicht von ambitionierten Normalanwendern,
+     die auch mal ein bisschen layouten wollen, bis zu Profis, die
+     über den Gartenzaun schauen wollen, wie denn Linux aussieht.
+ </p>
+ <p>
+ <b>LU:</b> An welchen Vorbildern orientierst Du Dich, und wo willst Du mit
+ Scribus hin?
+ </p>
+ <p>
+ <b>FS:</b> Mein erster Orientierungspunkt war QuarkXPress 3.32, mittlerweile versuche ich auch
+ interessante und brauchbare Konzepte von Pagemaker und Indesign mit einzubauen. Endziel soll ungefähr die Funktionalität von Quark 4 sein, mit entsprechenden Modernisierungen natürlich. 
+ </p>
+ <p>
+ <b>LU:</b> Wird es noch Funktionen wie Importfilter für Textverarbeitungen
+     und automatisch erzeugte Inhaltsverzeichnisse geben? Wie sieht's
+ mit der Möglichkeit aus, mit Formatvorlagen-Tags vorausgezeichneten Text "einlaufen" zu lassen,
+ sodass er automatisch formatiert wird?
+ </p>
+ <p>
+ <b>FS:</b> Importfilter werden mit der Zeit auch noch kommen, sie sind allerdings
+     ziemlich zeitaufwendig, besonders wenn es sich um Binärformate
+     handelt.
+         Solche Sachen wie automatisches Inhaltsverzeichnis werden hingegen mit Sicherheit in einer der nächsten Versionen eingebaut. Ich hab' da noch
+     sehr viele Ideen, die der Realisierung harren. Wobei ..., das mit den
+     Formatierungstags, das ist eine interessante Idee, an die ich noch gar nicht gedacht habe. 
+ </p>
+ <p>
+ <b>LU:</b> Projekte wie Gimp begründen die fehlende Farbseparation mit Patentproblemen. Wie kommt Scribus dann zu dieser Funktionalität?
+ </p>
+ <p>
+ <b>FS:</b> Die Farbseparation in Scribus ist im Prinzip primitiv: Es wird einfach für jede der
+ vier Druckgrundfarben eine eigene Seite erstellt. Die Verfahrensweise hierfür ist
+ im PostScript-Reference-Manual und im PDF-Reference-Manual dargestellt.
+ Der Inhalt dieser Handbücher ist ausdrücklich für das Erstellen von Treibern
+ bestimmt und veröffentlicht worden.
+ Solch eine Separation wie in Scribus kann auch mit Gimp erstellt werden, nur
+ schreibt Scribus das Ergebnis gleich in eine Datei.
+ Patentproblematiken tauchen erst bei speziellen Farbtransferkurven und Sonderfarben (z. B. Pantone-Farben) auf.
+ <p>
+ <b>LU:</b> Woran arbeitest Du zur Zeit?
+ </p>
+ <p>
+ <b>FS:</b> Momentan arbeite ich daran, Scribus für die nächste Stable-Version 0.6
+     vorzubereiten, d. h., möglichst viele Bugs entfernen, alle eingebauten
+     Features vollständig auszuprogrammieren und die Übersetzungen auf den
+     neuesten Stand zu bringen.
+ </p>
+ <p>
+ <b>LU:</b> Kannst Du noch Hilfe gebrauchen, und falls ja, wobei?
+ </p>
+ <p>
+ <b>FS:</b> Hilfe kann ich immer gebrauchen, da ich der einzige Programmierer
+     an dem Projekt bin. Es ist jede Art von Feedback willkommen. Kleiner
+     Tipp für diejenigen, die in HTML und Web-Seiten-Bauen fit sind: Die
+     Scribus-Homepage hätte eine deutsche Übersetzung nötig.
+ </p>
+ <p>
+ <small>Die Fragen stellten Frank Wieduwilt und Patricia Jung.</small>
+ </TD>
+ </TR>
+ </TABLE>
+ </p>
+ 
+ <h3>Los geht's</h3>
+ <p>
+ Nach dem ersten Start begrüßt Sie das Programm mit einem gähnend leeren
+ Hauptfenster. Um eine neue Datei anzulegen, wählen Sie <i>Datei / Neu...</i>
+ aus dem Menü oder klicken auf die Schaltfläche mit dem leeren Blatt in
+ der Werkzeugleiste. Ein Dialog erscheint, in dem Sie die grundlegenden
+ Eigenschaften des neuen Dokuments einstellen (Abbildung 1).
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-neues-dokument.png"><IMG SRC="scribus-neues-dokument-sm.jpg" ALT="Ein neues Dokument anlegen"></a>
+ <H5 ALIGN=CENTER>Abb. 1: Ein neues Dokument anlegen</H5>
+ </P>
+ 
+ <p>
+ Im Bereich <i>Papierformat</i> legen Sie die Seitengröße fest. Fünf Formate sind
+ vordefiniert, über die Option <i>Anderes</i> kann die Benutzerin aber jedes
+ beliebige Papierformat eingeben.
+ </p>
+ <p>
+ Unter <i>Ränder</i> bestimmen Sie die Seitenränder. Beachten Sie, dass 
+ Ränder in einem DTP-Programm mehr als Orientierungshilfe dienen: Alle Objekte
+ lassen sich auch außerhalb platzieren. Wird die Option <i>Doppelseiten</i>
+ ausgewählt, erzeugt Scribus automatisch linke und rechte Seiten, bei denen
+ die linken und rechten Seitenränder gespiegelt werden.
+ </p>
+ <p>Wählen Sie die Option <i>Autom. Textrahmen</i>, erzeugt das Programm Rahmen
+ zur Aufnahme von Text, die genau innerhalb der Seitenränder liegen. Im
+ Bereich <i>Spalten</i> legen Sie Anzahl und Abstand der Spalten fest. Nun
+ wird für jede Spalte ein
+ Textrahmen angelegt.
+ <p>
+ Die Seitenränder lassen sich jederzeit neu einstellen. Wählen Sie dazu 
+ <i>Datei / Dokument einrichten...</i> aus dem Menü. In dem jetzt erscheinenden
+ Dialog legen Sie die Seitenränder neu fest (Abbildung 2).
+ </p>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-seite-einrichten.png"><IMG SRC="scribus-seite-einrichten-sm.jpg" ALT="Seite einrichten"></a>
+ <H5 ALIGN=CENTER>Abb. 2: Seitenränder einstellen</H5>
+ </P>
+ 
+ <h3>Bedienung, bitte!</h3>
+ <p>
+ Scribus lässt sich vollständig mit der Maus bedienen. Alle Programmfunktionen
+ erreichen Sie über das Menü oder über Werkzeugfenster. Die wichtigsten Tools
+ zeigt Abbildung 3 neben dem Programmfenster. Sie sind unabhängig davon
+ auf dem Bildschirm platzierbar und werden über das Menü <i>Werkzeuge</i> einzeln ein- und
+ ausgeblendet. Auch über
+ <b>Kontextmenüs</b> der einzelnen Layout-Objekte lassen sich die wichtigsten Programmfunktionen erreichen.
+ </p>
+ 
+ <P>
+ <hr>
+ <gl>
+ <b>Kontextmenü</b>: Ein Menü, das die Befehle anzeigt, die im Zusammenhang mit dem
+ gewählten Objekt sinnvoll sind. Kontextmenüs werden häufig durch Klicken mit der
+ rechten Maustaste geöffnet.
+ </gl>
+ <hr>
+ </P>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-werkzeuge.png"><IMG SRC="scribus-werkzeuge-sm.jpg" ALT="Scribus' Werkzeuge"></a>
+ <H5 ALIGN=CENTER>Abb. 3: Scribus' Werkzeuge</H5>
+ </P>
+ 
+ <p>
+ Das wichtigste Werkzeug ist die Maßpalette (in Abbildung 3 unten links).
+ Sie dient zum Formatieren der Rahmen und ihres Inhalts und enthält
+ zwei Karteireiter:
+ Unter <i>Rahmen</i> finden Sie die Koordinaten und die Lage des gewählten Rahmens
+ (Abbildung 4),
+ unter <i>Inhalt</i> alle Formatierungsoptionen für Text (Abbildung 5).
+ Einen Überblick über die Werkzeugleiste gibt Abbildung 6.
+ </p>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-masspalette.png"><IMG SRC="scribus-masspalette-sm.jpg" ALT="Maßpalette: Rahmen"></a>
+ <H5 ALIGN=CENTER>Abb. 4: Die Maßpalette -- Rahmenformat</H5>
+ </P>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-masspalette-inhalt.png"><IMG SRC="scribus-masspalette-inhalt-sm.jpg" ALT="Maßpalette: Inhalt"></a>
+ <H5 ALIGN=CENTER>Abb. 5: Die Maßpalette -- Textformat</H5>
+ </P>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-wl.png"><IMG SRC="scribus-wl-sm.jpg" ALT="Seite einrichten"></a>
+ <H5 ALIGN=CENTER>Abb. 6: Die Werkzeugleiste</H5>
+ </P>
+ 
+ <p>
+ Fast alle Befehle können auf Tasten(kombinationen) gelegt werden, so dass 
+ sich das Programm
+ auch über die Tastatur bedienen lässt. Die voreingestellten Tastenkürzel finden
+ Sie in Tabelle 1.
+ </p>
+ <p>
+ Um diese zu ändern, wählen Sie
+ <i>Bearbeiten / Voreinstellungen...</i> aus dem
+ Menü. Im <I>Voreinstellungen</I>-Dialog klicken Sie im Reiter <I>Allgemein</I>
+ auf <i>Tastaturkürzel...</i>
+ Daraufhin gelangen Sie in einen neuen Dialog, in dessen oberem Teil
+ fast alle Programmfunktionen gelistet sind. Im unteren Teil drücken Sie
+ den Button <I>Definiere Taste</I> und tippen die für die markierte
+ Funktion gewünschte Tastenkombination ein. 
+ Ein Druck auf <I>OK</I> speichert die neue Einstellung.
+ </p>
+ 
+ <p>
+ <table border="1" cellspacing="0" cellpadding="0" width="100%">
+ <tr align="center" bgcolor="#dfefff">
+  <td align="center" colspan="2"><font size=+1>Tabelle 1: Wichtige Tastenkürzel </font></td>
+ </tr>
+ <tr>
+ 	<th>Funktion</th>
+ 	<th>Tastenkürzel</th>
+ </tr>
+ <tr>
+         <td>Neue Datei anlegen </td>
+         <td>[Strg-N] </td>
+ </tr>
+ <tr>
+         <td>Datei öffnen </td>
+         <td>[Strg-O] </td>
+ </tr>
+ <tr>
+         <td>Datei schließen </td>
+         <td>[Strg-W] </td>
+ </tr>
+ <tr>
+         <td>Datei speichern </td>
+         <td>[Strg-S] </td>
+ </tr>
+ <tr>
+         <td>Dateiinformation </td>
+         <td>[Strg-I] </td>
+ </tr>
+ <tr>
+         <td>Datei drucken </td>
+         <td>[Strg-P] </td>
+ </tr>
+ <tr>
+         <td>Programm beenden </td>
+         <td>[Strg-Q] </td>
+ </tr>
+ <tr>
+         <td>Alles auswählen </td>
+         <td>[Strg-A] </td>
+ </tr>
+ <tr>
+         <td>Objekt modifizieren </td>
+         <td>[Strg-M] </td>
+ </tr>
+ <tr>
+         <td>Objekt duplizieren </td>
+         <td>[Strg-D] </td>
+ </tr>
+ <tr>
+         <td>Objekte gruppieren </td>
+         <td>[Strg-G] </td>
+ </tr>
+ <tr>
+         <td>Gruppierung lösen </td>
+         <td>[Strg-U] </td>
+ </tr>
+ <tr>
+         <td>Zoom: Ganze Seite </td>
+         <td>[Strg-0] </td>
+ </tr>
+ <tr>
+         <td>Zoom: Originalgröße </td>
+         <td>[Strg-1] </td>
+ </tr>
+ <tr>
+         <td>Weiche Trennung </td>
+         <td>[Alt--] </td>
+ </tr>
+ <tr>
+         <td>Absatz linksbündig </td>
+         <td>[Strg-L] </td>
+ </tr>
+ <tr>
+         <td>Absatz rechtsbündig </td>
+         <td>[Strg-R] </td>
+ </tr>
+ <tr>
+         <td>Absatz zentrieren </td>
+         <td>[Strg-E] </td>
+ </tr>
+ <tr>
+         <td>Seitenzahl einfügen </td>
+         <td>[Alt-#] </td>
+ </tr>
+ </table>
+ </p>
+ <h3>Alles im Rahmen</h3>
+ <p>
+ Alle Elemente eines Dokuments ordnen Sie in beliebig auf der Seite zu platzierenden
+ Rahmen an. Auf dem Bildschirm werden diese
+ mit einer gestrichelten Umrandung dargestellt; die des ausgewählten Elements
+ ist rot (Abbildung 7). Jeder Rahmen trägt an allen vier
+ Ecken Anfasser, kleine Quadrate, die Sie mit der Maus packen und verschieben,
+ um so die Rahmengröße anzupassen. </p>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-rahmen-gewaehlt.png"><IMG SRC="scribus-rahmen-gewaehlt-sm.jpg" ALT="Rahmen zum Bearbeiten markiert"></a>
+ <H5 ALIGN=CENTER>Abb. 7: Rahmen zum Bearbeiten ausgewählt</H5>
+ </P>
+ 
+ <p>Sie erleichtern sich das genaue Platzieren,
+ wenn Sie die Hilfslinien mit dem Befehl <i>Ansicht / Hilfslinien magnetisch</i>
+ so einrichten, dass Elemente auf den Hilfslinien einrasten.
+ Deren Abstand stellen Sie in den Programmoptionen ein, die Sie über
+ den Menübefehl <i>Bearbeiten / Voreinstellungen...</i> erreichen. Hinter dem
+ Karteireiter <i>Hilfslinien</i> finden Sie die nötigen Optionen. Unter <i>Abstand
+ Hauptlinien</i> geben Sie ein grobes Raster ein, <i>Abstand Teillinien</i> nimmt
+ das Feinraster auf. Ferner legen Sie hier fest, ob die Hilfslinien vor oder hinter
+ den Elementen angezeigt werden sollen.
+ </p>
+ 
+ <h3>Text</h3>
+ <p>
+ Wie kommt nun der Text in den Rahmen? Es gibt zwei Möglichkeiten: Auf einen
+ Klick auf das Icon <i>Rahmeninhalt bearbeiten</i> (vgl. Abbildung 6) hin
+ geben Sie den Text in den gewünschten
+ Rahmen ein. Das ist bei längeren Texten etwas umständlich. Es empfiehlt sich daher,
+ den Text vorab in einem Texteditor oder einer Textverarbeitung zu erfassen
+  und diesen in den Rahmen
+ zu laden. Dazu wählen Sie im "<I>Elemente auswählen</I>"-Modus 
+ den entsprechenden Textrahmen aus,
+ klicken mit der rechten Maustaste hinein
+ und entscheiden sich im Kontextmenü für <i>Text laden...</i>. Scribus kann nur unformatierten
+ Text importieren; wenn Sie zur Texterstellung eine Textverarbeitung wie Abiword oder
+ KWord verwenden, müssen Sie daher darauf achten, den Text ohne Formatierungsinformationen
+ zu speichern.
+ </p>
+ <p>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-zu-klein.png"><IMG SRC="scribus-zu-klein-sm.jpg" ALT="Zu wenig Platz im Textrahmen"></a>
+ <H5 ALIGN=CENTER>Abb. 8: Der Textrahmen ist zu klein</H5>
+ </P>
+ 
+ <p>
+ Falls der Text zu lang für einen Rahmen sein sollte, zeigt Scribus das mit einem
+ durchgekreuzten Kästchen unten rechts an (Abbildung 8).
+ Um mehr Platz zu schaffen, müssen Sie den Rahmen nicht unbedingt vergrößern:
+ Er lässt sich auch mit einem weiteren verbinden. Dazu markieren Sie
+ zunächst den aktuellen Rahmen, wählen das Werkzeug <i>Verbinde Textrahmen</i>
+ aus der Werkzeugleiste (Abbildung 6) und klicken auf den zweiten Rahmen. Beide Rahmen umgibt jetzt
+ eine durchgehende rote Linie, und der Text fließt vom ersten in
+ den zweiten.
+ </p>
+ <p>
+ Formatierungen wie Schriftart und -größe und Eigenschaften von Absätzen legen Sie im
+ Bearbeitungsmodus über Befehle im Menü <i>Stil</i> oder über
+ die Maßpalette (Abbildung 5) fest.
+ </p>
+ 
+ <p>
+ Wenn Sie vorhaben, das Dokument als PDF zu publizieren, erstellt Scribus auf
+ Wunsch eine Art
+ Inhaltsverzeichnis, das im Acrobat Reader angezeigt werden kann. Sie
+ markieren dazu alle Rahmen, deren erste Zeile im PDF als Stichwort
+ auftauchen sollen, als <i>PDF-Bookmark</i>, indem Sie mit der rechten Maustaste auf
+ den Rahmen klicken und <i>Ist PDF-Bookmark</i> aus dem Kontextmenü wählen.
+ </p>
+ <h3>Bilder</h3>
+ <p>
+ Scribus importiert Bilder in den Formaten PNG, JPEG, TIFF, XPM
+ und EPS; andere Formate müssen
+ mit einer Bildverarbeitung konvertiert werden, ehe sich die entsprechende
+ Abbildung ins Dokument einfügen lässt.
+ Zunächst bedarf es eines Rahmens, den Sie mit dem Befehl <i>Bildrahmen einfügen</i>
+ aus der Werkzeugleiste einfügen und mit der Maus aufziehen.
+ Ein Rechtsklick auf das leere,
+ mit einem X markierte Element
+ bringt ein Kontextmenü zum  Vorschein, aus dem Sie den Befehl <i>Bild laden...</i>
+ wählen und die entsprechende Bilddatei auswählen. Ein
+ im entsprechenden Dialog integriertes Vorschaufenster erleichtert das Auffinden der richtigen Grafik.
+ </p>
+ <p>
+ Die Größe eines einmal importierten Bildes ändern Sie über den
+ Eintrag <i>Modifizieren...</i> im Kontextmenü des Bildrahmens. Die
+ Textfelder
+ <i>Horiz. Skalierung</i> und <i>Vertik. Skalierung</i> ermöglichen
+ prozentuale Angaben (Abbildung 9). Klicken Sie das Ketten-Symbol
+ daneben, wird das Bild in der Größe proportional
+ verändert.
+ In den Feldern <i>Horiz. Versatz</i> und <i>Vertik. Versatz</i> legen Sie den
+ Abstand des Bildes von der oberen linken Ecke des Rahmens fest.
+ </p>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-mod-bildrahmen.png"><IMG SRC="scribus-mod-bildrahmen-sm.jpg" ALT="Bildrahmen bearbeiten"></a>
+ <H5 ALIGN=CENTER>Abb. 9: Bildrahmen bearbeiten</H5>
+ </P>
+ 
+ <h3>Rahmen bearbeiten</h3>
+ <p>
+ Einmal angelegt, stapeln sich die Rahmen in der Reihenfolge ihres
+ Erscheinens übereinander; der
+ obere Rahmen verdeckt jeweils den unteren. Lediglich Textrahmen haben
+ per Default einen transparenten Hintergrund,
+ so dass der unten liegende Text teilweise durchscheint (Abbildung 10).
+ </p>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-text-trans.png"><IMG SRC="scribus-text-trans-sm.jpg" ALT="Transparenter Textrahmen"></a>
+ <H5 ALIGN=CENTER>Abb. 10: Transparenter Textrahmen</H5>
+ </P>
+ 
+ <p>
+ Die Reihenfolge lässt sich über das Kontextmenü verändern, der
+ Hintergrund auch farbig gestalten. Zu diesem Zweck
+ wählen Sie den Eintrag <i>Modifizieren...</i> aus dem Kontextmenü des
+ jeweils markierten Rahmens. Im entsprechenden
+ Dialog suchen Sie aus der Liste <i>Hintergrundfarbe</i>
+ eine passende Farbe aus. Bei Textrahmen bewirkt der Eintrag <I>Keine</I> Transparenz. Mit der <i>Tonwert</i>-Angabe bestimmen Sie die Farb-Intensität.
+ So ist der Hintergrund in Abbildung 12 gelb mit einem Tonwert von
+ 15%. 
+ </p>
+ <p>
+ Ein Rahmen muss nicht rechteckig sein. Mit dem Befehl
+ <i>Objekt / Rahmenform</i> aus dem Menü legen Sie fest, ob der markierte
+ Rahmen rechteckig oder oval sein soll. Individueller geht es über
+ die Auswahl <i>Objekt / Rahmenform / Rahmen bearbeiten</i>, auf die hin
+ der aktive Rahmen dunkelblau erscheint, die vier Eckpunkte sind markiert. Eine
+ neu eingeblendete Werkzeugleiste bietet von links nach rechts drei 
+ Schaltflächen an: <i>Punkt
+ verschieben</i>, <i>Punkt einfügen</i> und <i>Punkt löschen</i> (Abbildung 11).
+ </p>
+ 
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-rahmen-bearbeiten.png"><IMG SRC="scribus-rahmen-bearbeiten-sm.jpg" ALT="Rahmenform verändern"></a>
+ <H5 ALIGN=CENTER>Abb. 11: Rahmenform verändern</H5>
+ </P>
+ 
+ <p>Damit lassen sich beliebige Rahmenformen erzeugen: Wählen Sie <i>Punkt einfügen</i>,
+ und klicken Sie an die Stelle, an der der neue Eckpunkt (in roter Farbe) erscheinen soll. Zum Verschieben drücken Sie die entsprechende Schaltfläche und ziehen den betroffenen Punkt mit der Maus an die gewünschte Position. Dieses Feature
+ ist von entscheidender Bedeutung, wenn Text freigestellte Abbildungen o. ä. umfließen soll. </p>
+ <p>
+ Einen Rahmen mit abgerundeten Ecken wie in Abbildung 12 erzeugen Sie über den
+ <i>Modifizieren...</i>-Eintrag aus dem Kontextmenü. Zu diesem Zweck
+ legen Sie den Radius der
+ Rundung im Textfeld <i>Eckradius</i> des "<i>Textrahmen modifizieren</i>"-Dialogs
+ fest.
+ </p>
+ 
+ <P ALIGN=CENTER>
+ <IMG SRC="scribus-runde-ecken.png" ALT="Rahmen mit abgerundeten Ecken"></a>
+ <H5 ALIGN=CENTER>Abb. 12: Rahmen mit abgerundeten Ecken</H5>
+ </P>
+ 
+ <h3>Linien, Ellipsen und Rechtecke</h3>
+ <p>
+ Neben Textrahmen und Bildern können Sie noch Linien, Rechtecke und
+ Ellipsen zeichnen. In der Werkzeugleiste finden Sie Schaltflächen zum
+ Aufrufen dieser Zeichenfunktionen.
+ </p>
+ <P ALIGN=CENTER>
+ <a href="scribus-formen.png"><IMG SRC="scribus-formen-sm.jpg" ALT="Zeichnen"></a>
+ <H5 ALIGN=CENTER>Abb. 13: Zeichnen</H5>
+ </P>
+ <p>
+ <p>
+ Jedes Objekt verfügt über eine beliebig zu wählende Füll- und Strichfarbe
+ (Abbildung 13).
+ Die geometrischen Formen werden genauso bearbeitet und angeordnet wie Bild- und
+ Textrahmen.
+ </p>
+ 
+ <h3>Vorlagen</h3>
+ <p>
+ Wer Zeitschriften, Bücher u. ä. layoutet, möchte die sich wiederholenden
+ Formatierungen nicht jedesmal neu per Hand auszeichnen. Wie professionelle
+ DTP-Programme kennt daher auch Scribus Format-Vorlagen für Seiten und Absätze.
+ </p>
+ <p>
+ Seitenvorlagen werden <i>Musterseiten</i>
+ genannt. Um eine solche zu erstellen, wählen Sie <i>Bearbeiten / Musterseiten...</i>
+ aus dem Menü. Ein Klick auf <i>Neu</i> öffnet einen Dialog, in dem Sie deren Eigenschaften einstellen (Abbildung 14).
+ </p>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-neue-musterseite.png"><IMG SRC="scribus-neue-musterseite-sm.jpg" ALT="Musterseite anlegen"></a>
+ <H5 ALIGN=CENTER>Abb. 14: Musterseite anlegen</H5>
+ </P>
+ 
+ <p>
+ Im Textfeld <i>Name</i> vergeben Sie einen möglichst aussagekräftigen Namen für
+ die neue Seite, in der (nur bei doppelseitigem Layout erscheinenden) Liste darunter wählen Sie, ob es sich um eine rechte
+ oder linke Seite handelt.
+ </p>
+ <p>
+ Solange der "<i>Musterseiten bearbeiten</i>"-Dialog geöffnet ist, sehen Sie im
+ Arbeitsbereich die Musterseite. Dort fügen Sie alle Elemente, die immer
+ wieder erscheinen (etwa Kopf- oder Fußzeilen) ein. Platzhalter für automatische Seitenzahlen
+ geben Sie ein, indem Sie in einem Textrahmen
+ die Tastenkombination [Alt-#] drücken, für zweistellige Zahlen zweimal [Alt-#].
+ </p>
+ <p>
+ Bei Betätigung des <i>Verlassen</i>-Buttons im Musterseiten-Dialog
+ wird die Vorlage automatisch zusammen mit dem Dokument gespeichert.
+ Alle Elemente, die Sie auf der
+ Musterseite angelegt haben, sind beim Bearbeiten eines damit formatierten
+ Dokuments vor Veränderungen geschützt.
+ </p>
+ <p>
+ Mit dem Menübefehl <i>Seite / Einfügen...</i> gelangen Sie in einen Dialog,
+ in dem Sie auf von Ihnen erstellten Musterseiten basierende
+ Seiten ins Dokument einfügen. (Bei doppelseitigem Layout legen Sie
+ die Vorlagen in den Listen <i>Rechte Seite basiert auf</I>
+ bzw. <i>Linke Seite basiert</i> fest.)
+ Wenn Sie die Musterseiten nachträglich bearbeiten, werden alle Änderungen
+ auf die schon bestehenden Seiten übernommen. Um einer bestehenden Seite eine andere
+ Musterseite zuzuweisen, wählen Sie <i>Seite / Musterseite anwenden...</i> aus dem
+ Menü. Es erscheint ein Dialog, in dem Sie die Musterseite für die aktuelle
+ Seite auswählen.
+ <p>
+ Absatzvorlagen oder <i>Stilvorlagen</i> speichern
+ Absatzausrichtung und -abstände, nicht jedoch Schriftart, -größe und -farbe.
+ Diese Formatierungen müssen Sie über die Befehle im Menü <i>Stil</i> oder
+ in der Maßpalette jedesmal neu eingeben.
+ Einen Überblick
+ über die vorhandenen Stilvorlagen erhalten Sie, indem Sie <i>Werkzeuge / Stilvorlagen zeigen</i>
+ aus dem Menü wählen. Anfangs sind noch keine vorhanden. Um eine solche
+ Vorlage anzulegen, doppelklicken Sie den Eintrag <i>kein Stil</i>. Ein Dialog
+ erscheint, in dem Sie Ihre Stilvorlagen bearbeiten (Abbildung 15).
+ </p>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-stilvorlagen.png"><IMG SRC="scribus-stilvorlagen-sm.jpg" ALT="Stilvorlagen verwalten"></a>
+ <H5 ALIGN=CENTER>Abb. 15: Stilvorlagen verwalten</H5>
+ </P>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-stilvorlage-bearbeiten.png"><IMG SRC="scribus-stilvorlage-bearbeiten-sm.jpg" ALT="Stilvorlagen verwalten"></a>
+ <H5 ALIGN=CENTER>Abb. 16: Stilvorlage bearbeiten</H5>
+ </P>
+ 
+ <p>
+ Ein Klick auf <i>Neu</i> öffnet ein Fenster, in dem Sie die Angaben zum Aussehen des
+ Stiles machen (Abbildung 16).
+ Ins Feld <i>Name</i> kommt eine Bezeichnung, in den Feldern
+ <i>Senkrechte Abstände</i>, <i>Einrückungen</i> und <i>Ausrichtung</i> bestimmen
+ Sie das Aussehen des Absatzes, der mit dieser Stilvorlage formatiert wird.
+ Ein Klick auf <i>OK</i> bringt Sie zurück zur Stilvorlagenübersicht,
+ dort speichert <i>Sichern</i>
+ die soeben erstellte Vorlage und schließt die Übersicht.
+ </p>
+ <p>
+ Um eine Vorlage anzuwenden, wählen Sie den gewünschten Absatz aus und klicken
+ in der Vorlagenliste einmal auf den Namen der Vorlage.
+ </p>
+ 
+ <h3>Ausgabe</h3>
+ <p>
+ Da der Autor mit dem bei Qt mitgelieferten PostScript-Druckertreiber nicht zufrieden
+ war, hat er einen völlig neuen PostScript-Treiber entwickelt. Mit dem Befehl
+ <i>Datei / Drucken...</i> öffnen Sie einen Dialog, in dem Sie die entsprechenden Druckoptionen
+ einstellen (Abbildung 17).
+ </p>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-drucken.png"><IMG SRC="scribus-drucken-sm.jpg" ALT="Der Druckdialog"></a>
+ <H5 ALIGN=CENTER>Abb. 17: Der Druckdialog</H5>
+ </P>
+ <P>
+ Über die Liste <i>Druckauswahl</i> wählen Sie einen Drucker oder legen fest, dass
+ das Dokument in eine Datei gedruckt werden soll. Haben Sie sich für Letzteres
+ entschieden, müssen Sie im Textfeld <i>Datei:</i> einen Dateinamen eingeben.
+ Unter <i>Druckbereich</i> bestimmen Sie, welche Seiten gedruckt werden sollen und legen
+ die Anzahl der Exemplare fest.
+ </p>
+ <p>
+ Das Feld <i>Optionen</i> bestimmt, auf welche Art die Datei gedruckt werden soll.
+ Wollen Sie das Dokument in eine Druckerei geben, ist die Option <i>Farbauszüge
+ drucken</i> interessant. Falls diese Option gewählt ist, druckt das Programm das
+ Dokument in vier Teilen: Je einen für die Farben Cyan, Magenta, Yellow und Black.
+ </p>
+ <p>
+ Um Dateien im PDF-Format zu erzeugen, benötigen Sie keinerlei Hilfsprogramme:
+ Sie wählen <i>Datei / Exportiere... / Als PDF sichern...</i> aus dem Menü, es erscheint
+ der "<i>PDF-Datei erzeugen</i>"-Dialog aus Abbildung 18.
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-pdf.png"><IMG SRC="scribus-pdf-sm.jpg" ALT="Eine PDF-Datei erzeugen"></a>
+ <H5 ALIGN=CENTER>Abb. 18: Eine PDF-Datei erzeugen</H5>
+ </P>
+ 
+ <p>
+ Ins Feld <i>Ausgabedatei</i> geben Sie den Namen des zu erzeugenden PDF-Files ein.
+ Unter <i>Datei Optionen</i> legen Sie das Ausgabeformat und die Auflösung
+ fest. Für Dokumente, die gedruckt werden sollen, ist 300 dpi ein guter Wert. Wenn es
+ Ihnen im Wesentlichen darum geht, das Dokument am Bildschirm zu lesen, können Sie die
+ Auflösung verringern, das verkleinert die Datei.
+ <P>
+ <p>
+ Mit <i>Komprimierung</i> stellen Sie ein, ob die Datei gepackt werden soll, um
+ Speicherplatz zu sparen. Da Daten-Komprimierung besonders bei großen Dateien Zeit
+ benötigt, sollten Sie diese Option erst wählen, wenn das Dokument fertiggestellt
+ ist.
+ </p>
+ <p>
+ Auf der Seite <i>Schriften</i> entscheiden Sie, welche Schriften in das Dokument eingebettet
+ werden sollen, damit sie auch auf Systemen verfügbar sind, auf denen die entsprechende
+ Schriftart nicht installiert ist.
+ </p>
+ <p>
+ Unter <i>Lesezeichen</i> schließlich legen Sie fest, ob die Datei mit Lesezeichen ausgegeben
+ werden soll. Diese werden in manchen PDF-Anzeigeprogrammen -- wie bereits erwähnt -- als Inhaltsverzeichnis
+ ausgegeben und erleichtern der Leserin die Navigation im Text. Die Liste <i>Lesezeichen</i>
+ zeigt alle im Text definierten Bookmarks an.
+ </p>
+ 
+ <p>
+ Auf der Seite <i>Extras</i> bestimmen Sie, ob der Übergang von einer zur anderen Seite
+ im PDF-Anzeigeprogramm mit Effekten wie Überblenden oder Rollen ablaufen soll.
+ </p>
+ 
+ <h3>Hilfe!</h3>
+ <p>
+ Scribus verfügt über ein deutschsprachiges Online-Tutorial, das die wichtigsten
+ Funktionen des Programms erklärt (Abbildung 19). Sie rufen die Hilfe über den
+ Menübefehl <i>Hilfe / Handbuch...</i> auf.
+ Dieses Handbuch führt in die Bedienung des
+ Programms anhand der Gestaltung eines Bucheinbands ein.
+ Mit Hilfe von Hyperlinks und der Werkzeugleiste am oberen Fensterrand des
+ Viewers navigieren Sie in den
+ Hilfeseiten.
+ </p>
+ 
+ <P ALIGN=CENTER>
+ <a href="scribus-hilfe.png"><IMG SRC="scribus-hilfe-sm.jpg" ALT="Hilfeseiten von Scribus"></a>
+ <H5 ALIGN=CENTER>Abb. 19: Die Hilfeseiten von Scribus</H5>
+ </P>
+ <P>
+ 
+ <h3>Wofür?</h3>
+ <p>
+ Scribus ist schon in der jetzigen Form für die Gestaltung von Handzetteln, Speisekarten,
+ Prospekten, Bauanleitungen und Schülerzeitungen geeignet. Größere Kataloge,
+ professionelle Magazine, Bücher oder
+ andere aufwändige Projekte überfordern das Programm allerdings (noch).
+ </p>
+ <p>
+ Abstürze gibt es hier und da noch, sodass Zwischenspeichern vor neuen Aktionen 
+ Pflicht ist -- die nach Redaktionsschluss erschienene Version 0.5.8 bringt in diesem Punkt bereits Linderung.
+ Die Qualität des PDF-Exports ist gut, so dass Dokumente bequem
+ weitergegeben werden können. Dank seiner Fähigkeit zur Farbseparation bleibt
+ Scribus als einem der ersten Linux-Progamme überhaupt der Weg
+ in die Druckvorstufe nicht schon von vornherein verwehrt.
+ Nicht nur aus diesem Grund schließt es eine große Lücke in der
+ Softwaresammlung für Linux -- wir sind gespannt auf die weitere Entwicklung. (pju)
+ </p>
+ 
+ <P>
+ <TABLE BORDER=1 CELLSPACING=0 CELLPADDING=0 WIDTH="100%">
+ <TR ALIGN=CENTER BGCOLOR="#dfefff">
+ <TD ALIGN=CENTER>
+ <FONT SIZE=+2>Infos</FONT>
+ </TD>
+ </TR>
+ <TR ALIGN=LEFT VALIGN=TOP>
+ <TD>
+   <BR>
+   <P>
+   [1] <a href="http://web2.altmuehlnet.de/fschmid/">http://web2.altmuehlnet.de/fschmid/</a><BR>
+   [2] <a href="http://www.clickfish.com/clickfish/guidearea/computertechnik/software/dtp1/wasist.html">http://www.clickfish.com/clickfish/guidearea/computertechnik/software/dtp1/wasist.html</a>
+     </P>
+ </TD>
+ </TR>
+ </TABLE>
+ </P>
+ 
+      	<p class="broken">
+	Dieser Online-Artikel kann Links enthalten, die auf nicht mehr
+	vorhandene Seiten verweisen. Wir ändern solche "broken links"
+	nur in wenigen Ausnahmefällen. Der Online-Artikel soll möglichst
+	unverändert der gedruckten Fassung entsprechen.
+	</p>
+      
+<script>AdController.finalize();</script>
+ </div>
+ <div align="center">
+  
+ </div>
+      <a href="https://www.linux-user.de/ausgabe/2002/05/038-scribus/scribus-5.html?print=y">Seite drucken</a> |
+    <a href="mailto:redaktion@linux-user.de?subject=Feedback zu https://www.linux-user.de/ausgabe/2002/05/038-scribus/scribus-5.html">Feedback zu dieser Seite</a>
+ |
+  <a href="/Datenschutz/">Datenschutz</a> |
+  &copy; 2019 <a href="http://www.computec.de" target="_blank">COMPUTEC MEDIA GmbH</a> <p style="text-align:center;"><a href="http://www.youronlinechoices.com/de/uber-oba/" target="_blank">
+ Nutzungsbasierte Onlinewerbung
+ <img src="https://www.linux-user.de/pix/oba.png" style="vertical-align:middle"/>
+ </a></p>
+ <p><small>
+
+                   [<a href="http://www.linux-magazin.de" target="_blank">Linux-Magazin</a>]
+                             [<a href="http://www.easylinux.de" target="_blank">EasyLinux</a>]
+                             [<a href="http://www.linux-community.de" target="_blank">Linux-Community</a>]
+               </small><br>&nbsp;
+<script src="//www.computec.de/common/disclaimer/load.min.js" charset="utf-8"></script>
+</body>
+</html>
+
+
