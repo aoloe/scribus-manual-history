@@ -6,9 +6,27 @@ Topic started by antonio_mo on <http://scribus-users.de>: <http://www.scribus-us
 ## Stable versions
 
 - 0.4 27.8.2001 / 8.9.2001
-  - Redesign the distribtue/align dialog
+  - Redesign the distribute/align dialog
 - 0.5 23.11.2001
+  - TrueType-Support
+  - Support for CMYK-Colors
+  - Template-Pages
+  - Objects can be grouped
+  - Paragraph-Styles
+  - Easy to use Scrapbook
+- Scribus 0.5.3 Released.
+  - Added TIFF Support. Now you can use TIFF-Files with embedded ICC-Profiles.
+- Scribus 0.5.4 released.
+  - Totally rewritten PDF-Export.
+  - You can create Thumbnail-Images of the Pages.
+  - You can select Fonts to be embedded in the PDF-File.
 - 0.6 13.4.2002
+  - Support for basic Color-Management. You can softproof your Document on the Screen (Works only with LittleCMS installed).
+  - Support for TIFF-Images.
+  - Totaly rewritten PDF-Export.
+  - User defineable Keyboard-Shortcuts
+  - Rounded Rectangles and rounded Frames
+  - This will be the last Version of Scribus for QT-2.xx. The next Developers Release will be ported to QT-3.xx
 - 0.8 29.9.2002
   - Based on QT 3
 - 1.0 26.6.2003
@@ -16,8 +34,12 @@ Topic started by antonio_mo on <http://scribus-users.de>: <http://www.scribus-us
 
 ## Unstable versions
 
-- 10.6.2001
+- 0.2 (?)
+  - archived on April 23 2001 by archive.org.
+  - two screenshots, .tar.gz not available anymore.
+- 10.6.200
   - First entry in the Changelog file
+  - Marked as 0.3
   - Measurement palette
   - Text tool and image tool
   - Magnetic guides
@@ -126,7 +148,7 @@ Topic started by antonio_mo on <http://scribus-users.de>: <http://www.scribus-us
 - 0.7.8 8.9.2002
   - Page palette
   - Scaling frame in edit mode
-
+- 1.1.6 29.3.2004
 
 Scribus versionen [aus Wikipedia](http://de.wikipedia.org/wiki/Scribus#Versionsgeschichte)
 

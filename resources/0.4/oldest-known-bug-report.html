@@ -1,0 +1,218 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+<link rel="icon" href="//favicon.png">
+<title>#118409 - scribus&#39;s description: English does not capitalize nouns - Debian Bug report logs</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/bugs.css" type="text/css">
+
+<link rel="canonical" href="Program fragment delivered error ``The 'bug' parameter (undef) to Debbugs::CGI::bug_links was an 'undef', which is not one of the allowed types: scalar arrayref
+ at /usr/local/lib/site_perl/Debbugs/CGI.pm line 435.
+	Debbugs::CGI::bug_links(HASH(0x560fcb111068)) called at template line 2
+	eval 'package DTT; ;
+#line 2 template
+html_escape(bug_links{bug=>$bug_numsubject});' called at /usr/share/perl5/Text/Template.pm line 320
+	Text::Template::fill_in(Text::Template=HASH(0x560fc856e2a8), "PACKAGE", "DTT", "HASH", HASH(0x560fc856e4d0)) called at /usr/local/lib/site_perl/Debbugs/Text.pm line 188
+	Debbugs::Text::fill_in_template("template", "cgi/bugreport", "variables", HASH(0x560fc5a67188), "hole_var", HASH(0x560fc856e0f8)) called at /srv/bugs.debian.org/cgi-bin/bugreport.cgi line 458''">
+<script type="text/javascript">
+<!--
+function toggle_infmessages()
+{
+        allDivs=document.getElementsByTagName("div");
+        for (var i = 0 ; i < allDivs.length ; i++ )
+        {
+                if (allDivs[i].className == "infmessage")
+                {
+                        allDivs[i].style.display=(allDivs[i].style.display == 'none' | allDivs[i].style.display == '') ? 'block' : 'none';
+                }
+        }
+}
+-->
+</script>
+</head>
+<body>
+<h1>Debian Bug report logs - 
+<a href="mailto:118409@bugs.debian.org">#118409</a><br>
+scribus&#39;s description: English does not capitalize nouns</h1>
+<div class="versiongraph"><a href="version.cgi?found=0.4.6-1;collapse=1;fixed=scribus%2F0.4.7-2;info=1;package=scribus;absolute=0"><img alt="version graph" src="version.cgi?collapse=1;found=0.4.6-1;fixed=scribus%2F0.4.7-2;package=scribus;width=2;absolute=0;height=2"></a></div>
+<div class="pkginfo">
+  <p>Package:
+     <a class="submitter" href="pkgreport.cgi?package=scribus">scribus</a>;
+Maintainer for <a href="pkgreport.cgi?package=scribus">scribus</a> is <a href="pkgreport.cgi?maint=mattia%40debian.org">Mattia Rizzolo &lt;mattia@debian.org&gt;</a>; Source for <a href="pkgreport.cgi?package=scribus">scribus</a> is <a href="pkgreport.cgi?src=scribus">src:scribus</a> (<a href="https://tracker.debian.org/pkg/scribus">PTS</a>, <a href="https://buildd.debian.org/scribus">buildd</a>, <a href="https://qa.debian.org/popcon.php?package=scribus">popcon</a>). </p>
+
+</div>
+
+<div class="buginfo">
+  <p>Reported by: <a href="pkgreport.cgi?submitter=dstarner98%40aasaa.ofe.org">David Starner &lt;dstarner98@aasaa.ofe.org&gt;</a></p>
+  <p>Date: Tue,  6 Nov 2001 00:33:01 UTC</p>
+
+<p>Severity: normal</p>
+<p></p>
+
+<p>Found in version 0.4.6-1</p>
+<p>Fixed in version scribus/0.4.7-2</p>
+
+<p><strong>Done:</strong> Wolfgang Sourdeau &lt;was@debian.org&gt;</p>
+
+<p>Bug is archived. No further changes may be made.<p></div>
+
+<p><a href="javascript:toggle_infmessages();">Toggle useless messages</a></p><div class="msgreceived"><p>View this report as an <a href="bugreport.cgi?bug=118409;mbox=yes">mbox folder</a>, <a href="bugreport.cgi?bug=118409;mbox=yes;mboxstatus=yes">status mbox</a>, <a href="bugreport.cgi?bug=118409;mbox=yes;mboxmaint=yes">maintainer mbox</a></p></div>
+
+<div class="infmessage"><hr><p>
+<a name="1"></a>
+<strong>Report forwarded</strong> to <code>debian-bugs-dist@lists.debian.org, unknown-package@qa.debian.org</code>:<br>
+<code>Bug#118409</code>; Package <code>scribus</code>.
+(<a href="bugreport.cgi?bug=118409;msg=2">full text</a>, <a href="bugreport.cgi?bug=118409;mbox=yes;msg=2">mbox</a>, <a href="#1">link</a>).</p></p></div>
+
+<div class="infmessage"><hr><p>
+<a name="3"></a>
+<strong>Acknowledgement sent</strong> to <code>David Starner &lt;dstarner98@aasaa.ofe.org&gt;</code>:<br>
+New Bug report received and forwarded.  Copy sent to <code>unknown-package@qa.debian.org</code>.
+(<a href="bugreport.cgi?bug=118409;msg=4">full text</a>, <a href="bugreport.cgi?bug=118409;mbox=yes;msg=4">mbox</a>, <a href="#3">link</a>).</p></p></div>
+
+<hr><p class="msgreceived"><a name="5"></a><a name="msg5"></a><a href="#5">Message #5</a> received at submit@bugs.debian.org (<a href="bugreport.cgi?bug=118409;msg=5">full text</a>, <a href="bugreport.cgi?bug=118409;mbox=yes;msg=5">mbox</a>, <a href="mailto:118409@bugs.debian.org?In-Reply-To=%3C20011105181737.A17045%40x8b4e53d6.dhcp.okstate.edu%3E&amp;References=%3C20011105181737.A17045%40x8b4e53d6.dhcp.okstate.edu%3E&amp;body=On%20Mon%2C%205%20Nov%202001%2018%3A17%3A37%20-0600%20David%20Starner%20%3Cdstarner98%40aasaa.ofe.org%3E%20wrote%3A%0A%3E%20Package%3A%20scribus%0A%3E%20Version%3A%200.4.6-1%0A%3E%20%0A%3E%20English%20doesn%27t%20capitalize%20nouns%20that%20don%27t%20occur%20at%20the%20start%20of%20a%0A%3E%20sentence%20and%20aren%27t%20proper.%20Hence%2C%20%22Layout%22%2C%20%22Programs%22%2C%20%22Fonts%22%2C%0A%3E%20%22Monitor%22%20and%20%22Output%22%20shouldn%27t%20be%20capitalized.%20%22Layout%22%20also%20occurs%20in%0A%3E%20the%20scribus-doc-%2A%20packages.%0A%3E%20%0A%3E%20--%20%0A%3E%20David%20Starner%20-%20dstarner98%40aasaa.ofe.org%0A%3E%20Pointless%20website%3A%20http%3A%2F%2Fdvdeug.dhis.org%0A%3E%20%22I%20saw%20a%20daemon%20stare%20into%20my%20face%2C%20and%20an%20angel%20touch%20my%20breast%3B%20each%20%0A%3E%20one%20softly%20calls%20my%20name%20.%20.%20.%20the%20daemon%20scares%20me%20less.%22%0A%3E%20-%20%22Disciple%22%2C%20Stuart%20Davis%0A%3E%20%0A%3E%20%0A&amp;subject=Re%3A%20scribus%27s%20description%3A%20English%20does%20not%20capitalize%20nouns">reply</a>):</p>
+<div class="headers">
+<img src="/cgi-bin/libravatar.cgi?email=dstarner98%40aasaa.ofe.org" alt="">
+<div class="header"><span class="headerfield">From:</span> David Starner &lt;dstarner98@aasaa.ofe.org&gt;</div>
+<div class="header"><span class="headerfield">To:</span> submit@bugs.debian.org</div>
+<div class="header"><span class="headerfield">Subject:</span> scribus&#39;s description: English does not capitalize nouns</div>
+<div class="header"><span class="headerfield">Date:</span> Mon, 5 Nov 2001 18:17:37 -0600</div>
+</div>
+<pre class="message">Package: scribus
+Version: 0.4.6-1
+
+English doesn&#39;t capitalize nouns that don&#39;t occur at the start of a
+sentence and aren&#39;t proper. Hence, &quot;Layout&quot;, &quot;Programs&quot;, &quot;Fonts&quot;,
+&quot;Monitor&quot; and &quot;Output&quot; shouldn&#39;t be capitalized. &quot;Layout&quot; also occurs in
+the scribus-doc-* packages.
+
+-- 
+David Starner - dstarner98@aasaa.ofe.org
+Pointless website: <a href="http://dvdeug.dhis.org">http://dvdeug.dhis.org</a>
+&quot;I saw a daemon stare into my face, and an angel touch my breast; each 
+one softly calls my name . . . the daemon scares me less.&quot;
+- &quot;Disciple&quot;, Stuart Davis
+
+
+</pre>
+
+<div class="msgreceived"><hr><p>
+<a name="6"></a>
+<strong>Reply sent</strong> to <code>Wolfgang Sourdeau &lt;was@debian.org&gt;</code>:<br>
+You have taken responsibility.
+(<a href="bugreport.cgi?bug=118409;msg=7">full text</a>, <a href="bugreport.cgi?bug=118409;mbox=yes;msg=7">mbox</a>, <a href="#6">link</a>).</p></p></div>
+
+<div class="infmessage"><hr><p>
+<a name="8"></a>
+<strong>Notification sent</strong> to <code>David Starner &lt;dstarner98@aasaa.ofe.org&gt;</code>:<br>
+Bug acknowledged by developer.
+(<a href="bugreport.cgi?bug=118409;msg=9">full text</a>, <a href="bugreport.cgi?bug=118409;mbox=yes;msg=9">mbox</a>, <a href="#8">link</a>).</p></p></div>
+
+<hr><p class="msgreceived"><a name="10"></a><a name="msg10"></a><a href="#10">Message #10</a> received at 118409-close@bugs.debian.org (<a href="bugreport.cgi?bug=118409;msg=10">full text</a>, <a href="bugreport.cgi?bug=118409;mbox=yes;msg=10">mbox</a>, <a href="mailto:118409@bugs.debian.org?body=On%20Thu%2C%2008%20Nov%202001%2015%3A02%3A28%20-0500%20Wolfgang%20Sourdeau%20%3Cwas%40debian.org%3E%20wrote%3A%0A%3E%20We%20believe%20that%20the%20bug%20you%20reported%20is%20fixed%20in%20the%20latest%20version%20of%0A%3E%20scribus%2C%20which%20has%20been%20installed%20in%20the%20Debian%20FTP%20archive%3A%0A%3E%20%0A%3E%20scribus-doc-de_0.4.7-2_all.deb%0A%3E%20%20%20to%20pool%2Fmain%2Fs%2Fscribus%2Fscribus-doc-de_0.4.7-2_all.deb%0A%3E%20scribus_0.4.7-2.diff.gz%0A%3E%20%20%20to%20pool%2Fmain%2Fs%2Fscribus%2Fscribus_0.4.7-2.diff.gz%0A%3E%20scribus_0.4.7-2_i386.deb%0A%3E%20%20%20to%20pool%2Fmain%2Fs%2Fscribus%2Fscribus_0.4.7-2_i386.deb%0A%3E%20scribus-doc-en_0.4.7-2_all.deb%0A%3E%20%20%20to%20pool%2Fmain%2Fs%2Fscribus%2Fscribus-doc-en_0.4.7-2_all.deb%0A%3E%20scribus_0.4.7-2.dsc%0A%3E%20%20%20to%20pool%2Fmain%2Fs%2Fscribus%2Fscribus_0.4.7-2.dsc%0A%3E%20%0A%3E%20%0A%3E%20%0A%3E%20A%20summary%20of%20the%20changes%20between%20this%20version%20and%20the%20previous%20one%20is%0A%3E%20attached.%0A%3E%20%0A%3E%20Thank%20you%20for%20reporting%20the%20bug%2C%20which%20will%20now%20be%20closed.%20%20If%20you%0A%3E%20have%20further%20comments%20please%20address%20them%20to%20118409%40bugs.debian.org%2C%0A%3E%20and%20the%20maintainer%20will%20reopen%20the%20bug%20report%20if%20appropriate.%0A%3E%20%0A%3E%20Debian%20distribution%20maintenance%20software%0A%3E%20pp.%0A%3E%20Wolfgang%20Sourdeau%20%3Cwas%40debian.org%3E%20%28supplier%20of%20updated%20scribus%20package%29%0A%3E%20%0A%3E%20%28This%20message%20was%20generated%20automatically%20at%20their%20request%3B%20if%20you%0A%3E%20believe%20that%20there%20is%20a%20problem%20with%20it%20please%20contact%20the%20archive%0A%3E%20administrators%20by%20mailing%20ftpmaster%40debian.org%29%0A%3E%20%0A%3E%20%0A%3E%20-----BEGIN%20PGP%20SIGNED%20MESSAGE-----%0A%3E%20Hash%3A%20SHA1%0A%3E%20%0A%3E%20Format%3A%201.7%0A%3E%20Date%3A%20Thu%2C%20%208%20Nov%202001%2002%3A29%3A16%20-0500%0A%3E%20Source%3A%20scribus%0A%3E%20Binary%3A%20scribus-doc-de%20scribus-doc-en%20scribus%0A%3E%20Architecture%3A%20source%20all%20i386%0A%3E%20Version%3A%200.4.7-2%0A%3E%20Distribution%3A%20unstable%0A%3E%20Urgency%3A%20low%0A%3E%20Maintainer%3A%20Wolfgang%20Sourdeau%20%3Cwas%40debian.org%3E%0A%3E%20Changed-By%3A%20Wolfgang%20Sourdeau%20%3Cwas%40debian.org%3E%0A%3E%20Description%3A%20%0A%3E%20%20scribus%20%20%20%20-%20a%20free%20software%20desktop%20publishing%20program%0A%3E%20%20scribus-doc-de%20-%20German%20documentation%20for%20Scribus%0A%3E%20%20scribus-doc-en%20-%20English%20documentation%20for%20Scribus%0A%3E%20Closes%3A%20118409%0A%3E%20Changes%3A%20%0A%3E%20%20scribus%20%280.4.7-2%29%20unstable%3B%20urgency%3Dlow%0A%3E%20%20.%0A%3E%20%20%20%20%2A%20Uncapitalize%20nouns%20in%20the%20package%20descriptions.%20%28Closes%3A%20%23118409%29%0A%3E%20Files%3A%20%0A%3E%20%2082cbdc2c6236239cd494ce687db6c12f%20732%20editors%20optional%20scribus_0.4.7-2.dsc%0A%3E%20%201e916f4f43cae7a4f3038d4323430a17%204427%20editors%20optional%20scribus_0.4.7-2.diff.gz%0A%3E%20%20dd1026df8ffc15e8683199994f99166a%2010422%20doc%20optional%20scribus-doc-en_0.4.7-2_all.deb%0A%3E%20%20559575a5f20d3172a0a1bdf681266055%20384014%20doc%20optional%20scribus-doc-de_0.4.7-2_all.deb%0A%3E%20%20e19922805ffa1ed9aeb0fa9634fcc1f2%20476828%20editors%20optional%20scribus_0.4.7-2_i386.deb%0A&amp;subject=Re%3A%20Bug%23118409%3A%20fixed%20in%20scribus%200.4.7-2&amp;In-Reply-To=%3CE161vNc-00052a-00%40auric.debian.org%3E&amp;References=%3CE161vNc-00052a-00%40auric.debian.org%3E">reply</a>):</p>
+<div class="headers">
+<img src="/cgi-bin/libravatar.cgi?email=was%40debian.org" alt="">
+<div class="header"><span class="headerfield">From:</span> Wolfgang Sourdeau &lt;was@debian.org&gt;</div>
+<div class="header"><span class="headerfield">To:</span> 118409-close@bugs.debian.org</div>
+<div class="header"><span class="headerfield">Subject:</span> Bug#118409: fixed in scribus 0.4.7-2</div>
+<div class="header"><span class="headerfield">Date:</span> Thu, 08 Nov 2001 15:02:28 -0500</div>
+</div>
+<pre class="message">We believe that the bug you reported is fixed in the latest version of
+scribus, which has been installed in the Debian FTP archive:
+
+scribus-doc-de_0.4.7-2_all.deb
+  to pool/main/s/scribus/scribus-doc-de_0.4.7-2_all.deb
+scribus_0.4.7-2.diff.gz
+  to pool/main/s/scribus/scribus_0.4.7-2.diff.gz
+scribus_0.4.7-2_i386.deb
+  to pool/main/s/scribus/scribus_0.4.7-2_i386.deb
+scribus-doc-en_0.4.7-2_all.deb
+  to pool/main/s/scribus/scribus-doc-en_0.4.7-2_all.deb
+scribus_0.4.7-2.dsc
+  to pool/main/s/scribus/scribus_0.4.7-2.dsc
+
+
+
+A summary of the changes between this version and the previous one is
+attached.
+
+Thank you for reporting the bug, which will now be closed.  If you
+have further comments please address them to 118409@bugs.debian.org,
+and the maintainer will reopen the bug report if appropriate.
+
+Debian distribution maintenance software
+pp.
+Wolfgang Sourdeau &lt;was@debian.org&gt; (supplier of updated scribus package)
+
+(This message was generated automatically at their request; if you
+believe that there is a problem with it please contact the archive
+administrators by mailing ftpmaster@debian.org)
+
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.7
+Date: Thu,  8 Nov 2001 02:29:16 -0500
+Source: scribus
+Binary: scribus-doc-de scribus-doc-en scribus
+Architecture: source all i386
+Version: 0.4.7-2
+Distribution: unstable
+Urgency: low
+Maintainer: Wolfgang Sourdeau &lt;was@debian.org&gt;
+Changed-By: Wolfgang Sourdeau &lt;was@debian.org&gt;
+Description: 
+ scribus    - a free software desktop publishing program
+ scribus-doc-de - German documentation for Scribus
+ scribus-doc-en - English documentation for Scribus
+Closes: <a href="bugreport.cgi?bug=118409">118409</a>
+Changes: 
+ scribus (0.4.7-2) unstable; urgency=low
+ .
+   * Uncapitalize nouns in the package descriptions. (Closes: #<a href="bugreport.cgi?bug=118409">118409</a>)
+Files: 
+ 82cbdc2c6236239cd494ce687db6c12f 732 editors optional scribus_0.4.7-2.dsc
+ 1e916f4f43cae7a4f3038d4323430a17 4427 editors optional scribus_0.4.7-2.diff.gz
+ dd1026df8ffc15e8683199994f99166a 10422 doc optional scribus-doc-en_0.4.7-2_all.deb
+ 559575a5f20d3172a0a1bdf681266055 384014 doc optional scribus-doc-de_0.4.7-2_all.deb
+ e19922805ffa1ed9aeb0fa9634fcc1f2 476828 editors optional scribus_0.4.7-2_i386.deb
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.0.6 (GNU/Linux)
+Comment: Pour information voir <a href="http://www.gnupg.org">http://www.gnupg.org</a>
+
+iEYEARECAAYFAjvqPmAACgkQUP8yyofKtg9fZQCg0L7bL8sFKETckCBxj/1V9XAM
+ALAAoJNmxIN6e7oli+CspMiooWpdMU+A
+=+eTK
+-----END PGP SIGNATURE-----
+
+
+
+</pre>
+
+<hr>
+<p class="msgreceived">Send a report that <a href="https://bugs.debian.org/cgi-bin/bugspam.cgi?bug=118409">this bug log contains spam</a>.</p>
+<hr>
+<ADDRESS>Debian bug tracking system administrator &lt;<A HREF="mailto:owner@bugs.debian.org">owner@bugs.debian.org</A>&gt;.
+Last modified:
+<!--timestamp-->Mon Mar 18 13:00:51 2019<!--end timestamp-->; 
+Machine Name:
+<!--machinename-->buxtehude<!--machinename-->
+<P>
+<A HREF="https://www.debian.org/Bugs/">Debian Bug tracking system</A>
+</p>
+<p>
+  Debbugs is free software and licensed under the terms of the GNU
+  Public License version 2. The current version can be obtained
+  from <a href="https://bugs.debian.org/debbugs-source/">https://bugs.debian.org/debbugs-source/</a>.
+</p>
+<p>
+Copyright © 1999 Darren O. Benham,
+1997,2003 nCipher Corporation Ltd,
+1994-97 Ian Jackson,
+2005-2017 Don Armstrong, and many other contributors.
+</p>
+</ADDRESS>
+
+</body>
+</html>
