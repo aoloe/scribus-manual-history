@@ -9,14 +9,17 @@ Active team members:
 - Andreas Vox  (avox): Started with 1.3.0; developed the original Mac OS X native port, font and PostScript specialist, hates C++ and likes good layout; software developer. 
 - Christoph Schäfer (christoph_s): Bug reporter and tester for bleeding edge Scribus, Wiki editor and doc translator/proofreader, one of the main authors of the Official Manual and the Scribus Online Help. 
 
-Actvie _community_ members:
+Active _community_ members:
 
 - Ale Rimoldi: Bug reporting and testing, community manager (IRC, Stack overflow, Forums (official, german, french, Facebook), , Mentor, UI patches, Python Scripting. .
 - Enzo Gianvittorio: Runs the Facebook group.
 - Utnik: Bug reporting and testing, Support in the Forums (official, german).
 - Mattia Rizzolo (mapreri): Debian and Ubuntu packaging.
 - Fahad Al Saidi: Lead of the [HOST](http://host-oman.blogspot.com) project; Implementation of the Complex Text Layout (Arabic, Indic)
-- Nermander
+- Nermander: Support (Forum), Bug triage
+- Peter Bendek: Support, Bug triage
+- Firas Hanife (Firash): Patches, Bug triage.
+- Jluc: Support, Bug reporting.
 
 TODO: add the former team members
 
@@ -27,6 +30,8 @@ Recent former important _community_ members:
 - Cedric Gemy: UI testing and feedback, GSoC mentor; graphics professor and author of books on Open Source graphics software. 
 - Cezary Grabski: Lots of fixes and improvements to the text system, as well as other useful enhancements. 
 - Vladimir Savic (Vlada): influencer.
+- [William Bader](http://www.newspapersystems.com): Scripter patches; Scripter from the command line.
+- Berteh: The [Scribus Generator](https://github.com/berteh/ScribusGenerator)
 
 Past _community_ members:
 
