@@ -1,4 +1,4 @@
-# People who made or are making Scribus
+# People making Scribus
 
 ## The present and the recent past
 
