@@ -15,6 +15,11 @@ Articles:
 
 - [Introducing Scribus](http://www.linuxjournal.com/article/7054), Nov 01, 2003  By Peter Linnell
 
+Source code:
+
+- The oldest revision of Scribus in the repository is 0.9.9
+- https://github.com/scribusproject/scribus/tree/8ccda76dae42f33f8f4b135ec1e890899e83495f
+
 ## Release notes
 
 <https://web.archive.org/web/20030724105726/http://home.comcast.net/~scribusdocs/>
